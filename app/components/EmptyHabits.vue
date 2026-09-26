@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ isMyProfile: Boolean }>();
+defineProps<{ isMyProfile: boolean }>();
 const createHabitModal = ref(false);
 </script>
 

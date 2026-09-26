@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { marked } from 'marked';
 import { isSameDay, parseISO, format } from 'date-fns';
 const queryCache = useQueryCache();
 
-defineProps<{ habit: Habit; isMyProfile: Boolean }>();
+defineProps<{ habit: Habit; isMyProfile: boolean }>();
 
-const renderMarkdown = (text: string) => marked(text);
-
-const getCompletionRate = (habit: Habit) => Math.round((habit.completeDays.length / 40) * 100);
+const getCompletionRate = (habit: Habit) => Math.min(100, Math.round((habit.completeDays.length / HABIT_TARGET_DAYS) * 100));
 
 const openHabitModal = ref(false);
 

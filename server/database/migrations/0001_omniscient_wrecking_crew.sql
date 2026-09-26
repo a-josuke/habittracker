@@ -1,0 +1,1 @@
+CREATE INDEX `habits_user_id_idx` ON `habits` (`user_id`);

@@ -14,5 +14,9 @@ export default eventHandler(async event => {
     .returning()
     .get();
 
+  if (!deletedHabit) {
+    throw createError({ statusCode: 404, statusMessage: 'Habit not found' });
+  }
+
   return deletedHabit;
 });

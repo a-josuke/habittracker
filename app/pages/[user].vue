@@ -7,12 +7,12 @@ const fetchUser = () => useRequestFetch()(`/api/users/${login}`) as Promise<User
 const fetchHabits = () => useRequestFetch()(`/api/users/${login}/habits`) as Promise<Habit[]>;
 const fetchMyHabits = () => useRequestFetch()('/api/habits') as Promise<Habit[]>;
 
-const { data: user } = useQuery({ key: ['user'], query: fetchUser });
-const { data: habits } = useQuery({ key: ['habits'], query: fetchHabits });
+const { data: user } = useQuery({ key: ['user', login], query: fetchUser });
+const { data: habits } = useQuery({ key: ['habits', login], query: fetchHabits });
 const { data: myHabits } = useQuery({
   key: ['my_habits'],
   query: fetchMyHabits,
-  enabled: isMyProfile.value,
+  enabled: isMyProfile,
 });
 
 const emptyHabits = computed(() => habits.value?.length === 0);

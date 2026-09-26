@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "habit-dev",
-      "runtimeExecutable": "node_modules/.bin/nuxi",
-      "runtimeArgs": ["dev", "--host"],
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
       "port": 3000
     }
   ]

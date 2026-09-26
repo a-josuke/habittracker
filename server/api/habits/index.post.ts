@@ -2,8 +2,8 @@ import { useValidatedBody, z } from 'h3-zod';
 
 export default eventHandler(async event => {
   const { title, description, habitView } = await useValidatedBody(event, {
-    title: z.string().min(1, 'Title is required').trim(),
-    description: z.string().min(1, 'Description is required').trim(),
+    title: z.string().trim().min(1, 'Title is required').max(200),
+    description: z.string().trim().min(1, 'Description is required').max(5000),
     habitView: z.boolean(),
   });
 
