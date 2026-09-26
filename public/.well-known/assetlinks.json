@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.ajosuke.ayearfromnow",
+        "sha256_cert_fingerprints": ["6F:15:C9:A4:C7:96:0F:27:6E:4F:6F:43:4F:6F:6C:41:36:BA:B1:87:5E:D3:92:32:6B:E9:AE:26:2D:D9:52:2D"]
+      }
+    }]
